@@ -1,4 +1,4 @@
-// Type definitions for jQuery mmenu v5.5.3
+// Type definitions for jQuery mmenu v5.6.4
 // Project: http://mmenu.frebsite.nl/
 // Definitions by: John Gouigouix <https://github.com/orchestra-ts/DefinitelyTyped/>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
@@ -63,7 +63,7 @@ declare namespace JQueryMmenu {
          * You'll need this option when using the extensions.
          * Default: []
          */
-        extensions?: Array<Object>;
+        extensions?: string[];
 
         /**
          * navbar options
@@ -179,6 +179,8 @@ declare namespace JQueryMmenu {
         closePanel(panel: JQuery): void;
         /** @see closePanel() */
         bind(methodName: "closePanel", callback: (panel: JQuery) => void): void;
+        bind(methodName: "closingPanel", callback: (panel: JQuery) => void): void;
+        bind(methodName: "closedPanel", callback: (panel: JQuery) => void): void;
 
         /**
          * Trigger this method to get the class instance for the menu.
@@ -202,6 +204,8 @@ declare namespace JQueryMmenu {
         openPanel(panel: JQuery): void;
         /** @see openPanel() */
         bind(methodName: "openPanel", callback: (panel: JQuery) => void): void;
+        bind(methodName: "openingPanel", callback: (panel: JQuery) => void): void;
+        bind(methodName: "openedPanel", callback: (panel: JQuery) => void): void;
 
         /**
          * Trigger this method to set or unset a list item as "selected".
